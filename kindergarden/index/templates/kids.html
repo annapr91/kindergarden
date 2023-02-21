@@ -1,0 +1,20 @@
+<form action="{% url 'kids' %}" method="POST">
+    {% csrf_token %}
+    {<p>
+            <label>Введите имя</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите id_number</label><br>
+            <input type="number" name="id_number" />
+        </p>
+        <p>
+            <label>Введите surname</label><br>
+            <input type="number" name="surname" />
+        </p>
+
+        <input type="submit" value="Сохранить" >
+    </form>
+
+</form>
+

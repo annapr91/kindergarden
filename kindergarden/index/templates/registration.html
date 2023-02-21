@@ -1,0 +1,15 @@
+{% load i18n %}
+ 
+
+<h1>{{title}}</h1>
+ <main class="container_size">
+<div class="info">
+    <div class="info_item">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% trans 'Регистрация' %}</button>
+</form>
+        </form>
+</div>
+</div>

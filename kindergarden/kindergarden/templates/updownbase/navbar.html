@@ -1,0 +1,51 @@
+{% load i18n %}
+{% load account %}
+{% load socialaccount %}
+{% block 'navbar'%}
+
+<div class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<a class="navbar-brand" href="index.html">
+					<img src="" alt="Techro HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right mainNav">
+					<li class="c1 active"><a href="index.html">Home</a></li>
+					<li class="c2"><a href="{%url 'people'%}">{% translate "people" %}</a></li>
+					<li class="c3"><a href="courses.html">Courses</a></li>
+					<li class="c4"><a href="{%url 'price'%}">Price</a></li>
+
+					<li class="c5"><a href="videos.html">{% translate "Videos" %}</a></li>
+					<li class="c6 dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'kindergarden'%}">{% translate "Right Sidebar" %}</a></li>
+							<li><a href="#">{% translate "KY-ky" %}</a></li>
+							<li><a href="{% url 'registration' %}">Registration</a></li>
+							<li><a href="{% url 'contact'  %}">Contact</a></li>
+						</ul>
+					</li>
+					{% if user.is_authenticated %}
+					<h3>{{ user.username}}<a href="/accounts/logout/">Logout</a></h3>
+					{%else%}
+						<h3><a href='{% provider_login_url "google" %}?next={{request.get_full_path}}'>Login</a></h3>
+					{%endif%}
+
+<!--					{{% get_available_languages as languages %}-->
+
+<!--{% translate "View this category in:" %}-->
+<!--{% for lang_code, lang_name in languages %}-->
+<!--    {% language lang_code %}-->
+<!--    <a href="{% url 'contact'  %}">{{ lang_name }}</a>-->
+<!--    {% endlanguage %}-->
+<!--{% endfor %}-->
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</div>
+
+{%endblock%}

@@ -1,0 +1,31 @@
+<form action="{% url 'people' %}" method="post">
+    {% csrf_token %}
+    <p>
+            <label>Введите имя</label><br>
+            <input type="text" name="name" />
+        </p>
+        <p>
+            <label>Введите id_number</label><br>
+            <input type="number" name="id_number" />
+        </p>
+        <p>
+            <label>Введите phone_number</label><br>
+            <input type="number" name="phone_number" />
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form>
+<!--    <button type="submit">Добавить</button>-->
+</form>
+
+
+<!--{%for chil in children%}-->
+<!--    {{chil.name}}-->
+<!--    {{chil.surname}}-->
+<!--    {%for rod in perents%}-->
+<!--    {%if chil.roditeli_id == rod.id%}-->
+<!--            {{rod}}-->
+<!--{%endif%}-->
+<!--{%endfor%}-->
+<!--{%endfor%}-->
+
+

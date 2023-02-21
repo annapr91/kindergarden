@@ -1,0 +1,17 @@
+{%block content%}
+<body>
+
+    <div class="flex-container">
+        {% for good in object_list %}
+        {% if good.photo %}
+        <div><p><img class="img-article-left" src="{{good.photo.url}}"></p></div>
+        {% endif %}
+         <div>{{good.name}}</div>
+    </div >
+
+    {{good.address}}
+    {{good.phone_number}}
+
+    {% endfor %}
+</body>
+{%endblock %}
